@@ -1,0 +1,49 @@
+[package]
+name = "stm32h7-sdmmc"
+version = "0.1.0"
+authors = ["Richard Meadows <richard@richard.fish>"]
+edition = "2018"
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Hardware Abstraction Layer for (SDMMC) on STM32H7"
+keywords = ["stm32", "stm32h7", "sdmmc", "memory"]
+repository = "https://github.com/richardeoin/stm32h7-sdmmc"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+exclude = [".gitignore", "README.tpl", ".travis.yml"]
+
+[package.metadata.docs.rs]
+features = ["stm32h743v"]
+targets = ["thumbv7em-none-eabihf"]
+
+[dependencies]
+cortex-m = "0.6.2"
+
+[dependencies.log]
+version = "^0.4.8"
+default-features = false
+optional = true
+
+[dependencies.stm32h7xx-hal]
+version = "^0.5.0"
+# NOTE: Keep re-exported feature flags below up-to-date with stm32h7xx-hal
+
+[features]
+stm32h742 = ["stm32h7xx-hal/stm32h742"]
+stm32h743 = ["stm32h7xx-hal/stm32h743"]
+stm32h753 = ["stm32h7xx-hal/stm32h753"]
+stm32h750 = ["stm32h7xx-hal/stm32h750"]
+stm32h742v = ["stm32h7xx-hal/stm32h742v"]
+stm32h743v = ["stm32h7xx-hal/stm32h743v"]
+stm32h753v = ["stm32h7xx-hal/stm32h753v"]
+stm32h750v = ["stm32h7xx-hal/stm32h750v"]
+stm32h747cm7 = ["stm32h7xx-hal/stm32h747cm7"]
+
+[dev-dependencies]
+cortex-m-rt = "0.6.12"
+panic-itm = "0.4.1"
+log = "0.4.8"
+cortex-m-log = { version = "0.6.1", features = ["itm", "log-integration"] }
+
+[[example]]
+name = "stm32h747i-disco"
+required-features = ["stm32h7xx-hal/rt", "stm32h7xx-hal/stm32h747cm7"]
