@@ -98,6 +98,9 @@
 #[macro_use(trace)]
 extern crate log;
 
+#[macro_use]
+mod macros;
+
 mod sd_registers;
 pub use sd_registers::{SDStatus, CID, CSD, OCR, SCR};
 

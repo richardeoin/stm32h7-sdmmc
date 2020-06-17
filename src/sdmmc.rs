@@ -607,6 +607,8 @@ macro_rules! sdmmc {
                     } else {
                         // Switch to max clock for SDR12
                         self.clkcr_set_clkdiv(25_000_000, width)?;
+
+                        sdmmc_trace!("Set intermediate clock frequency of 25MHz (SDR12 signalling");
                     }
 
                     // Read status
@@ -624,6 +626,8 @@ macro_rules! sdmmc {
                                 return Err(Error::SignalingSwitchFailed);
                             }
                         }
+
+                        sdmmc_trace!("Set final clock frequency of {}", freq.0);
                     }
 
                     Ok(())
