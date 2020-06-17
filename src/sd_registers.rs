@@ -3,6 +3,7 @@
 use core::fmt;
 use core::str;
 
+#[non_exhaustive]
 #[derive(Debug, Copy, Clone)]
 pub enum CardVersion {
     V1_0,

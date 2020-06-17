@@ -161,6 +161,7 @@ pub enum BusWidth {
 
 /// Types of SD Card
 #[derive(Debug, Copy, Clone)]
+#[non_exhaustive]
 pub enum CardType {
     /// Standard Capacity (< 2Gb)
     SDSC,
@@ -174,6 +175,7 @@ impl Default for CardType {
 }
 
 /// The signalling scheme used on the SDMMC bus
+#[non_exhaustive]
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 #[allow(missing_docs)]
 pub enum Signalling {
@@ -190,6 +192,7 @@ impl Default for Signalling {
 }
 
 /// Errors
+#[non_exhaustive]
 #[allow(missing_docs)]
 #[derive(Debug, Copy, Clone)]
 pub enum Error {
