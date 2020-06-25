@@ -24,7 +24,7 @@ default-features = false
 optional = true
 
 [dependencies.stm32h7xx-hal]
-version = "^0.5.0"
+version = "^0.6.0"
 # NOTE: Keep re-exported feature flags below up-to-date with stm32h7xx-hal
 
 [features]
